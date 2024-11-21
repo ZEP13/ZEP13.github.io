@@ -1,0 +1,229 @@
+/* style nav bar */
+*{
+  font-family:Arial, Helvetica, sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background: white;
+}
+
+nav{
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+.navLinks{
+  display: none;
+}
+.navLinks a{
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  transition: 0.2s ease;
+  padding: 10px;
+  border-radius: 15px;
+  margin-right: 50px;
+}
+.navLinks a:hover{
+
+  background: #91383880;
+  scale: 1.1;
+}
+.logo{
+  margin-left: 25px;
+}
+.menu_mobile > input{
+  display: none;
+}
+.menu_mobile label{
+  cursor: pointer;
+}
+/* media query nav */
+@media screen and (min-width: 800px){
+  .menu_mobile{
+    display: none;
+  }
+  .navLinks{
+    display: flex;
+  }
+}
+#toggle_menu:checked ~.menu {
+  transform: translateX(0);
+}
+.menu{
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #913838;
+  transform: translateX(100%);
+  transition: all 0.1s;
+}
+.menu_mobile{
+  margin-right: 25px;
+}
+.menuLinksMobile{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.menuLinksMobile label{
+  margin-right: 35px;
+  margin-top: 35px;
+}
+.menuLinks{
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  align-items: flex-start;
+  margin-top: 10vh;
+  transform: translateX(40px);
+}
+.menuLinks a{
+  font-size: 25px;
+  text-decoration: none;
+  color:white;
+}
+/* formulaire css */
+.titlecontact{
+  display: flex;
+  justify-content: center;
+}
+.titlecontact h3{
+  font-size: 55px;
+  padding-top: 100px; 
+}
+.boxinput{
+  padding: 100px 20px;
+  background-color: #913838;
+  gap: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: 
+  "nom mail"
+  "texte texte"
+  "tel send";
+}
+::placeholder{
+  font-size: 20px;
+  color: white;
+}
+
+input{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  padding: 0 5px;
+  width: 500px;
+  height: 50px;
+}
+.textarea{
+  margin: 10px 0;
+  border-radius: 15px;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 10px;
+  height: 150px;
+}
+.mail{
+  margin: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.mail,
+.tel, span {
+  margin-top: 4px;
+}
+.labelmail,
+.labelnom{
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  transition: bottom 0.3s;
+}
+.nom{
+  margin: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.tel{
+  margin: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.labelnum{
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  transition: bottom 0.3s;
+}
+#nom{
+  grid-area: nom;
+}
+#mail{
+  grid-area: mail;
+}
+#text{
+  resize: none;
+  grid-area: texte;
+}
+#tel{
+  grid-area: tel;
+}
+#send{
+  border-radius: 15px;
+  color: white;
+  border: 1px solid black;
+  grid-area: send;
+}
+
+@media screen and (max-width:1300px){
+  .titlecontact h3{
+    font-size: 35px;
+  }
+  .boxinput{
+    grid-template-areas: 
+    "nom"
+    "mail"
+    "texte"
+    "tel"
+    "send";
+  }
+}
+@media screen and (max-width:500px){
+  input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    padding: 0 5px;
+    width: 250px;
+    height: 30px;
+  }
+  .textarea{
+    padding: 10px;
+    height: 150px;
+  }
+}
+input:user-invalid{
+  color: red
+}

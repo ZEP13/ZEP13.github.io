@@ -1,0 +1,114 @@
+/* deco pour etude */
+.title2{
+    display: flex;
+    justify-content: center;
+}
+.title2 h3{
+    font-size: 55px;
+    padding-bottom: 100px;
+}
+.container2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.container2 .box{
+    position: relative;
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
+    background: #913838;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    transition: 0.4s ease;
+}
+.container2 h2{
+    font-size: 35px;
+}
+.box{
+    transition: 0.4s ease;
+}
+.box:hover .etude{
+    opacity: 1;
+}
+.box:hover{
+    scale: 1.1;
+}
+.etude{
+    width: 280px;
+    font-size: 25px;
+    padding: 0 60px;
+    opacity: 0;
+    transition: .6s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #913838;
+}
+/* media queries pour etude */
+@media screen and (max-width: 1500px){
+    .container2{
+        flex-wrap: wrap
+    }
+    .container2 .box{
+        width: 300px;
+        height: 180px;
+    }
+    .container2 h2{
+        font-size: 20px;
+    }
+    .title2 h3{
+        font-size: 35px;
+    }
+    .etude{
+        font-size: 20px;
+    }
+    .ifa,
+    .secondaire,
+    .unif{
+        margin-bottom: 50px;   
+    }
+    .container .row{
+        flex-direction: column;
+    }
+} 
+@media screen and (max-width: 500px){
+    .container2{
+        justify-content: center;
+    }
+}
+/* animation pour box .etude */
+
+
+
+
+/* css box exp  */
+.titleExp{
+    display: flex;
+    justify-content: center;
+  }
+.titleExp h3{
+    font-size: 55px;
+    padding-top: 100px; 
+  }
+  @media screen and (max-width:1300px){
+    .titleExp h3{
+      font-size: 35px;
+    }
+}
+
+.accordion-button:not(.collapsed){
+    color: white !important;
+    background-color: #913838 !important;
+}
+.accordion{
+    --bs-accordion-btn-focus-box-shadow: none !important;
+}
+.progress-bar{
+    background: #91383880 !important;
+}
